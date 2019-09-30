@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>403</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QGroupBox" name="gb_SerialPortSettings">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>10</y>
-     <width>321</width>
+     <width>361</width>
      <height>111</height>
     </rect>
    </property>
@@ -147,20 +147,311 @@
      </property>
     </item>
    </widget>
+   <widget class="QPushButton" name="btn_OpenSerialPort">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>70</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="btn_OpenSerialPort">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>130</y>
-     <width>75</width>
-     <height>23</height>
+     <x>20</x>
+     <y>128</y>
+     <width>361</width>
+     <height>91</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Open</string>
+   <property name="title">
+    <string>DATA</string>
    </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>244</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="leData_0">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_1">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>g</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_2">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_3">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_4">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_5">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_6">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>8</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leData_7">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>150</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QRadioButton" name="rbAscii">
+       <property name="text">
+        <string>ASCII</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbHex">
+       <property name="text">
+        <string>HEX</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rbDec">
+       <property name="text">
+        <string>DEC</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="btnSendData">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>50</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send -&gt;</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>230</y>
+     <width>361</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Input</string>
+   </property>
+   <widget class="QPlainTextEdit" name="teInputScreen">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>321</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnClearInputScreen">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>260</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>groupBox</zorder>
+  <zorder>gb_SerialPortSettings</zorder>
+  <zorder>leData_0</zorder>
+  <zorder>leData_3</zorder>
+  <zorder>leData_2</zorder>
+  <zorder>leData_5</zorder>
+  <zorder>leData_6</zorder>
+  <zorder>leData_4</zorder>
+  <zorder>leData_7</zorder>
+  <zorder>leData_1</zorder>
+  <zorder>rbAscii</zorder>
+  <zorder>rbHex</zorder>
+  <zorder>rbDec</zorder>
+  <zorder>groupBox_2</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
