@@ -1,7 +1,9 @@
 #include "dialog.h"
+#include "stepcommand.h"
 #include <QApplication>
 
 #include <QtSerialPort/QSerialPort>
+
 
 int main(int argc, char *argv[])
 {

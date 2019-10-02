@@ -1,6 +1,8 @@
 #ifndef DIALOG_H
 #define DIALOG_H
 
+#include "stepcommand.h"
+
 #include <QDialog>
 #include <QtSerialPort/QSerialPort>
 
@@ -16,33 +18,30 @@ public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
 
-    QSerialPort *my_serial;
-
     void readData();
 
 private slots:
-    void on_btn_OpenSerialPort_clicked();
+    void on_btnOpenSerialPort_clicked();
 
-    void on_cbx_PortNr_activated(int index);
+    void on_cbxPortNr_activated(int index);
 
     void on_btnClearInputScreen_clicked();
 
-    void on_rbAscii_toggled(bool checked);
+    void on_cbxPortNr_currentIndexChanged(int index);
 
-    void on_rbHex_toggled(bool checked);
-
-    void on_rbDec_toggled(bool checked);
-
-    void on_cbx_PortNr_currentIndexChanged(int index);
-
-    void on_cbx_Speed_currentIndexChanged(const QString &arg1);
+    void on_cbxSpeed_currentIndexChanged(const QString &arg1);
 
     void on_btnSendData_clicked();
 
+    void on_rbHex_clicked(bool checked);
 
+    void on_rbAscii_clicked(bool checked);
+
+    void on_rbDec_clicked(bool checked);
 
 private:
     Ui::Dialog *ui;
+    StepCommand step_cmd;
 };
 
 #endif // DIALOG_H

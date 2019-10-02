@@ -18,14 +18,14 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>361</width>
+     <width>371</width>
      <height>111</height>
     </rect>
    </property>
    <property name="title">
     <string>Serial Port Settings</string>
    </property>
-   <widget class="QLabel" name="lbl_dscr">
+   <widget class="QLabel" name="lblDscr">
     <property name="geometry">
      <rect>
       <x>133</x>
@@ -38,7 +38,7 @@
      <string>........................................</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="cbx_PortNr">
+   <widget class="QComboBox" name="cbxPortNr">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -58,6 +58,9 @@
       <width>70</width>
       <height>16777215</height>
      </size>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -110,7 +113,7 @@
      <string>Speed:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="cbx_Speed">
+   <widget class="QComboBox" name="cbxSpeed">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -131,6 +134,9 @@
       <height>16777215</height>
      </size>
     </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
     <item>
      <property name="text">
       <string>9600</string>
@@ -147,7 +153,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="btn_OpenSerialPort">
+   <widget class="QPushButton" name="btnOpenSerialPort">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -166,23 +172,91 @@
     <rect>
      <x>20</x>
      <y>128</y>
-     <width>361</width>
+     <width>371</width>
      <height>91</height>
     </rect>
    </property>
    <property name="title">
     <string>DATA</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>244</width>
+      <width>341</width>
       <height>22</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="cbxCommand">
+       <property name="minimumSize">
+        <size>
+         <width>96</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>STEP_LEFT</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>STEP_RIGHT</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>START</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ONE_TURN</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>HALF_STEP</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>FULL_STEP</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SPEED_SLOW</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SPEED_MIDDLE</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SPEED_FAST</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ONE_TURN</string>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item>
       <widget class="QLineEdit" name="leData_0">
        <property name="minimumSize">
@@ -346,7 +420,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -395,13 +469,16 @@
      <string>Send -&gt;</string>
     </property>
    </widget>
+   <zorder>btnSendData</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>230</y>
-     <width>361</width>
+     <width>371</width>
      <height>281</height>
     </rect>
    </property>
@@ -416,7 +493,7 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>321</width>
+      <width>331</width>
       <height>231</height>
      </rect>
     </property>
@@ -427,7 +504,7 @@
    <widget class="QPushButton" name="btnClearInputScreen">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>350</x>
       <y>260</y>
       <width>20</width>
       <height>20</height>
@@ -440,17 +517,6 @@
   </widget>
   <zorder>groupBox</zorder>
   <zorder>gb_SerialPortSettings</zorder>
-  <zorder>leData_0</zorder>
-  <zorder>leData_3</zorder>
-  <zorder>leData_2</zorder>
-  <zorder>leData_5</zorder>
-  <zorder>leData_6</zorder>
-  <zorder>leData_4</zorder>
-  <zorder>leData_7</zorder>
-  <zorder>leData_1</zorder>
-  <zorder>rbAscii</zorder>
-  <zorder>rbHex</zorder>
-  <zorder>rbDec</zorder>
   <zorder>groupBox_2</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        dialog.cpp
+        dialog.cpp \
+    stepcommand.cpp
 
 HEADERS += \
-        dialog.h
+        dialog.h \
+    stepcommand.h
 
 FORMS += \
         dialog.ui
