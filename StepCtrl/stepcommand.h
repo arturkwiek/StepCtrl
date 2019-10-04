@@ -30,7 +30,8 @@ class StepCommand
     bool isAscii() {
         return b_AsciiFormat;
     }
-    QSerialPort *my_serial;
+    QSerialPort *my_serial;    
+    qint64 iSendedChars;
 
 
     enum {

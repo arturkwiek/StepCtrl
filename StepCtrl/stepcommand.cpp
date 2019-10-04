@@ -1,7 +1,8 @@
 #include "stepcommand.h"
 
 StepCommand::StepCommand():
-    my_serial(new QSerialPort)
+    my_serial(new QSerialPort),
+    iSendedChars(0)
 {
 
 }
