@@ -82,8 +82,8 @@ void Dialog::on_cbxPortNr_activated(int index)
 void Dialog::on_btnClearInputScreen_clicked()
 {
     ui->teInputScreen->clear();
-    step_cmd.iSendedChars = 0;
-    ui->lblSendedChars->setText(QString::number(step_cmd.iSendedChars));
+    //    step_cmd.iSendedChars = 0;
+    //    ui->lblSendedChars->setText(QString::number(step_cmd.iSendedChars));
 }
 
 void Dialog::on_cbxPortNr_currentIndexChanged(int index)
@@ -92,7 +92,6 @@ void Dialog::on_cbxPortNr_currentIndexChanged(int index)
     step_cmd.my_serial->close();
     ui->btnOpenSerialPort->setText("Open");
     ui->btnOpenSerialPort->setStyleSheet("color: black");
-
 }
 
 void Dialog::on_cbxSpeed_currentIndexChanged(const QString &arg1)
@@ -104,78 +103,117 @@ void Dialog::on_cbxSpeed_currentIndexChanged(const QString &arg1)
 void Dialog::on_btnSendData_clicked()
 {
     int i=0;
-
+    int iData;
     char tab[12];
     QVector<char> data;
-    data.push_back(0x55);
-    qDebug() << "[" << i++ << "] -> " << data.back();
-    data.push_back(ui->cbxCommand->currentIndex() + 1);
-    qDebug() << "[" << i++ << "] -> " << data.back();
-    if(!ui->leData_0->text().isEmpty())
-        data.push_back(ui->leData_0->text().data()->toLatin1());
-    else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+    data.clear();
+    data.push_back(0x55); // ---> 0x55
+    qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+    switch(ui->cbxCommand->currentIndex()) {
+    case StepCommand::STEP_LEFT:
+        iData = StepCommand::STEP_LEFT;
+        data.push_back(iData); // ---> StepCommand::STEP_LEFT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+
+        iData = ui->leData_0->text().toInt() >> 8;
+        data.push_back(iData); // ---> ui->leData_0->text().toShort();
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        iData = ui->leData_0->text().toInt() & 0xff;
+        data.push_back(iData); // ---> ui->leData_0->text().toShort();
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        qDebug() << "[" << i++ << "] -> " << QString::number(iData,16);
+        break;
+    case StepCommand::STEP_RIGHT:
+        iData = StepCommand::STEP_RIGHT;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+
+        iData = ui->leData_0->text().toShort();
+        data.push_back(iData); // ---> ui->leData_0->text().toShort();
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+    default:
+
+        iData = ui->cbxCommand->currentIndex() + 1;
+        data.push_back(iData); // ---> ui->cbxCommand->currentIndex() + 1;
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+
+        if(!ui->leData_0->text().isEmpty())
+            iData = ui->leData_0->text().toShort();
+        else
+            iData = 0;
+        data.push_back(iData); // ---> ui->leData_0->text().data()->toLatin1();
+        qDebug() << "[" << i++ << "] leData_0 -> " << QString::number(data.back(),16);
+
+    }
+
     if(!ui->leData_1->text().isEmpty())
-        data.push_back(ui->leData_1->text().data()->toLatin1());
+        iData = ui->leData_1->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_1->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_1 -> " << ui->leData_1->text() << "|" << QString::number(data.back(),16);
+
     if(!ui->leData_2->text().isEmpty())
-        data.push_back(ui->leData_2->text().data()->toLatin1());
+        iData = ui->leData_2->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_2->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_2 -> " << QString::number(data.back(),16);
+
     if(!ui->leData_3->text().isEmpty())
-        data.push_back(ui->leData_3->text().data()->toLatin1());
+        iData = ui->leData_3->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_3->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_3 -> " << QString::number(data.back(),16);
+
     if(!ui->leData_4->text().isEmpty())
-        data.push_back(ui->leData_4->text().data()->toLatin1());
+        iData = ui->leData_4->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_4->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_4 -> " << QString::number(data.back(),16);
+
     if(!ui->leData_5->text().isEmpty())
-        data.push_back(ui->leData_5->text().data()->toLatin1());
+        iData = ui->leData_5->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_5->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_5 -> " << QString::number(data.back(),16);
+
     if(!ui->leData_6->text().isEmpty())
-        data.push_back(ui->leData_6->text().data()->toLatin1());
+        iData = ui->leData_6->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_6->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_6 -> " << QString::number(data.back(),16);
+
     if(!ui->leData_7->text().isEmpty())
-        data.push_back(ui->leData_7->text().data()->toLatin1());
+        iData = ui->leData_7->text().toShort();
     else
-        data.push_back('0');
-    qDebug() << "[" << i++ << "] -> " << data.back();
+        iData = 0;
+    data.push_back(iData); // ---> ui->leData_7->text().data()->toLatin1();
+    qDebug() << "[" << i++ << "] leData_7 -> " << QString::number(data.back(),16);
 
     qDebug() << data.size();
-    data.push_back('\0');
-    qDebug() << "[" << i++ << "] -> '\0' " << data.back();
-    qDebug() << "[" << i++ << "] -> '\0' " << data.back();
-
-    tab[0] = data.at(0);
-    tab[1] = data.at(1);
-    tab[2] = data.at(2);
-    tab[3] = data.at(3);
-    tab[4] = data.at(4);
-    tab[5] = data.at(5);
-    tab[6] = data.at(6);
-    tab[7] = data.at(7);
-    tab[8] = data.at(8);
-    tab[9] = data.at(9);
-    tab[10] = data.at(10);
-    qDebug() << "data" << data;
+    data.push_back('\0'); // ---> '\0'
+    qDebug() << "[" << i++ << "] -> '\0' " << QString::number(data.back(),16);
+    for(int i=0;i<data.size();i++) {
+        tab[i] = data.at(i);
+    }
+    qDebug() << "data: " << data;
     qDebug() << "data.constData: " << data.constData();
     qDebug() << "data.data: " << data.data();
     qDebug() << "tab: " << tab[0];
     qDebug() << "*tab: " << QString::number(*tab);
     qDebug() << "tab[0]: " << QString::number(tab[0]);
-    for(int i =0;i<12;i++)
-        step_cmd.iSendedChars += step_cmd.my_serial->write(&tab[i]);
+    ui->teOutputScreen->insertPlainText("Tx (hex): ");
+    for(int i =0;i<data.size();i++) {
+        ui->teOutputScreen->insertPlainText("[" + QString::number(data.at(i),16) + "] ");
+        step_cmd.iSendedChars += step_cmd.my_serial->write(&tab[i],1);
+    }
+    ui->teOutputScreen->insertPlainText("\n");
     ui->lblSendedChars->setText(QString::number(step_cmd.iSendedChars));
     step_cmd.setCommand(data);
 
@@ -205,4 +243,11 @@ void Dialog::on_rbDec_clicked(bool checked)
 {
     if(checked)
         step_cmd.setFormat(StepCommand::DEC);
+}
+
+void Dialog::on_btnClearOutputScreen_clicked()
+{
+    ui->teOutputScreen->clear();
+    step_cmd.iSendedChars = 0;
+    ui->lblSendedChars->setText(QString::number(step_cmd.iSendedChars));
 }

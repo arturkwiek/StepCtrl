@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>546</height>
+    <width>835</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
    <widget class="QLabel" name="lblDscr">
     <property name="geometry">
      <rect>
-      <x>133</x>
+      <x>130</x>
       <y>25</y>
       <width>171</width>
       <height>20</height>
@@ -117,7 +117,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>51</y>
+      <y>50</y>
       <width>60</width>
       <height>20</height>
      </rect>
@@ -156,8 +156,8 @@
    <widget class="QPushButton" name="btnOpenSerialPort">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>70</y>
+      <x>130</x>
+      <y>50</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -170,8 +170,8 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>128</y>
+     <x>400</x>
+     <y>10</y>
      <width>371</width>
      <height>110</height>
     </rect>
@@ -200,6 +200,11 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
+       <item>
+        <property name="text">
+         <string>(brak)</string>
+        </property>
+       </item>
        <item>
         <property name="text">
          <string>STEP_LEFT</string>
@@ -271,6 +276,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="inputMask">
+        <string>999</string>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -290,8 +298,11 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="inputMask">
+        <string>999</string>
+       </property>
        <property name="text">
-        <string>g</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -312,6 +323,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="inputMask">
+        <string>999</string>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -330,6 +344,9 @@
          <width>25</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="inputMask">
+        <string>999</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -350,6 +367,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="inputMask">
+        <string>999</string>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -369,6 +389,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="inputMask">
+        <string>999</string>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -387,6 +410,9 @@
          <width>25</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="inputMask">
+        <string>999</string>
        </property>
        <property name="text">
         <string>8</string>
@@ -409,6 +435,9 @@
          <width>25</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="inputMask">
+        <string>999</string>
        </property>
        <property name="text">
         <string>1</string>
@@ -561,7 +590,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -595,17 +624,16 @@
     </layout>
    </widget>
    <zorder>layoutWidget</zorder>
-   <zorder>btnSendData</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>label_4</zorder>
-   <zorder>label_3</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>250</y>
+     <x>400</x>
+     <y>130</y>
      <width>371</width>
      <height>281</height>
     </rect>
@@ -643,9 +671,52 @@
     </property>
    </widget>
   </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>371</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Output</string>
+   </property>
+   <widget class="QPlainTextEdit" name="teOutputScreen">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>331</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnClearOutputScreen">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>260</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+   </widget>
+  </widget>
   <zorder>groupBox</zorder>
   <zorder>gb_SerialPortSettings</zorder>
   <zorder>groupBox_2</zorder>
+  <zorder>groupBox_3</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

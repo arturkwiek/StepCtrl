@@ -35,7 +35,7 @@ class StepCommand
 
 
     enum {
-        STEP_LEFT,
+        STEP_LEFT = 1,
         STEP_RIGHT,
         START,
         STOP,
