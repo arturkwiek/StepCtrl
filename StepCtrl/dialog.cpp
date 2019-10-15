@@ -132,10 +132,60 @@ void Dialog::on_btnSendData_clicked()
         data.push_back(iData); // ---> ui->leData_0->text().toShort();
         qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
         break;
+
+    case StepCommand::START:
+        iData = StepCommand::START;
+        data.push_back(iData); // ---> StepCommand::START
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+    case StepCommand::STOP:
+        iData = StepCommand::STOP;
+        data.push_back(iData); // ---> StepCommand::STOP
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::ONE_TURN:
+        iData = StepCommand::ONE_TURN;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::HALF_STEP:
+        iData = StepCommand::HALF_STEP;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::FULL_STEP:
+        iData = StepCommand::FULL_STEP;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::SPEED_SLOW:
+        iData = StepCommand::SPEED_SLOW;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::SPEED_MIDLE:
+        iData = StepCommand::SPEED_MIDLE;
+        data.push_back(iData); // ---> StepCommand::STEP_RIGHT
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+
+    case StepCommand::SPEED_FAST:
+        iData = StepCommand::SPEED_FAST;
+        data.push_back(iData); // ---> StepCommand::HALF_STEP
+        qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+        break;
+        break;
     default:
 
-        iData = ui->cbxCommand->currentIndex() + 1;
-        data.push_back(iData); // ---> ui->cbxCommand->currentIndex() + 1;
+        iData = ui->cbxCommand->currentIndex();
+        data.push_back(iData); // ---> ui->cbxCommand->currentIndex();
         qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
 
         if(!ui->leData_0->text().isEmpty())
