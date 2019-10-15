@@ -107,8 +107,7 @@ void Dialog::on_btnSendData_clicked()
     char tab[12];
     QVector<char> data;
     data.clear();
-    data.push_back(0x55); // ---> 0x55
-    qDebug() << "[" << i++ << "] -> " << QString::number(data.back(),16);
+
     switch(ui->cbxCommand->currentIndex()) {
     case StepCommand::STEP_LEFT:
         iData = StepCommand::STEP_LEFT;
@@ -246,6 +245,9 @@ void Dialog::on_btnSendData_clicked()
     data.push_back(iData); // ---> ui->leData_7->text().data()->toLatin1();
     qDebug() << "[" << i++ << "] leData_7 -> " << QString::number(data.back(),16);
 
+    data.push_front(data.size());
+    qDebug() << "size: " << data.size();
+    data.push_front(0x55);
     qDebug() << data.size();
     data.push_back('\0'); // ---> '\0'
     qDebug() << "[" << i++ << "] -> '\0' " << QString::number(data.back(),16);
