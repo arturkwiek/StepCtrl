@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         dialog.cpp \
-    stepcommand.cpp
+    stepcommand.cpp \
+    zmt_protocol.cpp
 
 HEADERS += \
         dialog.h \
-    stepcommand.h
+    stepcommand.h \
+    zmt_protocol.h
 
 FORMS += \
         dialog.ui

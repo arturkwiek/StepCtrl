@@ -41,8 +41,6 @@ private slots:
 
     void on_btnClearOutputScreen_clicked();
 
-    void on_cbxCommand_currentIndexChanged(int index);
-
 private:
     Ui::Dialog *ui;
     StepCommand step_cmd;

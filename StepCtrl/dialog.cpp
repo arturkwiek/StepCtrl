@@ -3,7 +3,8 @@
 #include <QtSerialPort/QSerialPort>
 #include <QSerialPortInfo>
 #include <QDebug>
-#include <vector>
+#include <QVector>
+#include "zmt_protocol.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -245,11 +246,10 @@ void Dialog::on_btnSendData_clicked()
     data.push_back(iData); // ---> ui->leData_7->text().data()->toLatin1();
     qDebug() << "[" << i++ << "] leData_7 -> " << QString::number(data.back(),16);
 
-    data.push_front(data.size());
-    qDebug() << "size: " << data.size();
+    data.push_front(data.size() + 3);
     data.push_front(0x55);
-    qDebug() << data.size();
     data.push_back('\0'); // ---> '\0'
+    qDebug() << "size: " << data.size();
     qDebug() << "[" << i++ << "] -> '\0' " << QString::number(data.back(),16);
     for(int i=0;i<data.size();i++) {
         tab[i] = data.at(i);
@@ -275,7 +275,12 @@ void Dialog::readData()
 {
     const QByteArray data = step_cmd.my_serial->readAll();
     ui->teInputScreen->insertPlainText(data);
-    qDebug() << data;
+
+    qDebug() << " data: " << data;
+    qDebug() << " data size: " << data.size();
+    for (int i=0; i<data.size();i++) {
+        rcvFrame(data.at(i));
+    }
 }
 
 

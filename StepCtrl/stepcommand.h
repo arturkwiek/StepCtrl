@@ -50,7 +50,6 @@ class StepCommand
 
 private:
 
-
     QVector<char> data; /* ramka danych */
     bool b_AsciiFormat = true; /* przesyłanie danych w formacie Ascii */
     bool b_HexFormat = true; /* przesyłanie danych w formacie Hex */
