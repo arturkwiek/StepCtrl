@@ -157,8 +157,11 @@ void rcvFrame(uint8_t byte) {
                 uint16_t calculated_crc;
                 calculated_crc = calculateCRC(parse_frame,rcv_frame_data_size);
                 if(calculated_crc != rcv_crc) {
-                    //err
+                    int i;
+                    i  = 9;
                 } else {
+                    int i;
+                    i  = 9;
                     //instance->MyProtocol_onFrameArrive( &(instance->pbuffer[DATA_OFFSET_VER_1_0]), instance->receivedFrameDataSize);
                 }
                 parse_index = 0;

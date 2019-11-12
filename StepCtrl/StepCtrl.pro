@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         dialog.cpp \
     stepcommand.cpp \
-    zmt_protocol.cpp
+    zmt_protocol.cpp \
+    framecomposer.cpp
 
 HEADERS += \
         dialog.h \
     stepcommand.h \
-    zmt_protocol.h
+    zmt_protocol.h \
+    framecomposer.h
 
 FORMS += \
         dialog.ui

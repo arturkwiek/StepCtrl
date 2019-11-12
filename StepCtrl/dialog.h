@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include "stepcommand.h"
+#include "framecomposer.h"
 
 #include <QDialog>
 #include <QtSerialPort/QSerialPort>
@@ -44,6 +45,7 @@ private slots:
 private:
     Ui::Dialog *ui;
     StepCommand step_cmd;
+    FrameComposer composer;
 };
 
 #endif // DIALOG_H
