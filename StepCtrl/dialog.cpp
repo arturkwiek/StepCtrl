@@ -254,9 +254,9 @@ void Dialog::on_btnSendData_clicked()
     data.push_back(iData); // ---> ui->leData_7->text().data()->toLatin1();
     qDebug() << "[" << i++ << "] leData_7 -> " << QString::number(data.back(),16);
     
-    data.push_front(data.size() + 3);
-    data.push_front(0x55);
-    data.push_back('\0'); // ---> '\0'
+//    data.push_front(data.size() + 3);
+//    data.push_front(0x55);
+//    data.push_back('\0'); // ---> '\0'
     qDebug() << "size: " << data.size();
     qDebug() << "[" << i++ << "] -> '\0' " << QString::number(data.back(),16);
     for(int i=0;i<data.size();i++) {
